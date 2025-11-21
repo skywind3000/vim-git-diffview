@@ -52,6 +52,7 @@ Plug 'skywind3000/vim-git-diffview'
 | fugitive | git log 输出窗口，即 `:Git log --oneline` 或 `:Git log --graph --oneline --all --decorate` 等命令打开的临时窗口 |
 | gv.vim | 日志窗口，就是 `:GV` 命令打开那个 | 
 | flog | 日志窗口，就是 `:Flog` 命令打开的那个 |
+| vim-plug | 控件更新窗口，即 `:PlugUpdate` 或者 `:PlugDiff` 命令打开的那个窗口 |
 
 在这些窗口上运行 `:GitDiffView` 都会根据光标位置自动识别你想对比什么东西。对于 `:Git log` 命令的输出窗口，插件会自动从当前行提取 commit hash（通常是行首的第一个非空白字符串）。
 
