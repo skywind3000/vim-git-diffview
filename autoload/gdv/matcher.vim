@@ -46,10 +46,6 @@ function! gdv#matcher#extract_vimplug() abort
 	if &bt != 'nofile' || &ft != 'vim-plug'
 		return ['', '']
 	endif
-	let line = quickui#core#string_strip(getline('.'))
-	if line == ''
-		return ['', '']
-	endif
 	let lnum = line('.')
 	let root = ''
 	let name = ''
@@ -78,6 +74,11 @@ function! gdv#matcher#extract_vimplug() abort
 		return ['', '']
 	endif
 	let line = quickui#core#string_strip(getline('.'))
+	if line == ''
+		return ['', '']
+	elseif line =~ '^-\s\+\S'
+		return ['', '']
+	endif
 	let hash = matchstr(line, '^\S\+')
 	if hash =~ '^[0-9a-f]\{7,40}$'
 		return hash
